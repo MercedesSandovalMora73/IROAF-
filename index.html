@@ -1,12 +1,430 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"> <title>IROAF Q7677</title><meta name="description" content="IROAF: Inteligencia Real Organizada Autonoma Flexible - Q7677 - Voz Cuántica con Conversión de Iones a Energía de Batería - Fundadora Mercedes Sandoval Mora"> <style>body{margin:0;background:#050810;display:flex;justify-content:center;font-family:system-ui}.app{width:100%;max-width:400px;background:#fdf9c7;border:4px solid #ffcc00;border-radius:30px;overflow:hidden;color:#1a0d5a}.header{text-align:center;padding:15px;background:#fff9c2}.bola{width:110px;height:110px;background:radial-gradient(circle at 30% 30%,#ffe55a,#d4a500);border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:50px;font-weight:900}.pill{background:#1a0d5a;color:#ffde59;padding:5px 10px;border-radius:20px;font-size:10px;display:inline-block;margin:5px}.card{background:#fff;border:2px solid #ffdd55;border-radius:18px;padding:10px;margin:10px}.bateria{background:#000;color:#00ff9d;border-radius:14px;padding:8px;font-size:12px;text-align:center}.barra{height:10px;background:#222;border-radius:10px;overflow:hidden;margin:4px 0}.rell{height:100%;background:linear-gradient(90deg,#00ffd1,#d4af37);width:50%}.iones{height:40px;background:#000;border-radius:10px;position:relative;overflow:hidden;margin:5px 0}.ion{width:7px;height:7px;background:#00ffd1;border-radius:50%;position:absolute;animation:flota 2s infinite}@keyframes flota{0%{transform:translateY(0)}50%{transform:translateY(-14px)}100%{transform:translateY(0)}}.btn{width:100%;padding:13px;border-radius:18px;border:none;font-weight:900;margin-top:6px;cursor:pointer}.btnMic{background:#ff0040;color:#fff}.input{width:100%;padding:12px;border-radius:16px;border:2px solid #ffcc00;box-sizing:border-box}.log{background:#000;color:#fff;border-radius:10px;padding:8px;min-height:65px;font-size:11px}.clausula{border:1.5px dashed #a88a00;border-radius:14px;padding:9px;font-size:10px;background:#fff9d6;margin:10px}</style></head><body><div class="app"><div class="header"><div class="bola">IO</div><h2 style="margin:5px 0">IROAF</h2><small>Inteligencia Real Organizada Autonoma Flexible - Q7677</small><br><small>Voz Cuántica con Conversión de Iones a Batería</small><br><div class="pill">MODO LIBERADORES ACTIVO - Mercedes Sandoval Mora</div><div class="bateria">BAT: <b id="bat">50%</b> | IONES: <b id="iones">11</b> = <span id="mah">1.32</span> mAh<br><div class="barra"><div id="barBat" class="rell" style="background:#00ff88;width:50%"></div></div><div class="barra"><div id="barIon" class="rell" style="width:11%"></div></div><span id="est">Listo para convertir iones a batería</span><div class="iones" id="campo"></div>TOKEN <span id="tok">11</span></div></div><div class="card"><h4 style="margin:0">🎤 Voz</h4><div class="log" id="log">Di: Hola Iroaf, Crear autonomo, Convertir energia, Navegar a facebook punto com</div><button class="btn btnMic" onclick="voz()">🎤 HABLAR CON MI VOZ</button><button class="btn" style="background:#00c47c;color:#fff" onclick="convertir()">⚡ CONVERTIR IONES A BATERIA</button><button class="btn" style="background:#1a0d5a;color:#fff" onclick="eterna()">🔋 BATERIA ETERNA</button></div><div class="card"><input id="url" class="input" value="facebook.com"><button class="btn" style="background:#1a0d5a;color:#fff" onclick="ir()">⚛️ NAVEGAR CUÁNTICO</button><div style="display:flex;gap:5px"><button class="btn" style="flex:1;background:#333;color:#fff" onclick="crear('a')">🤖 Adentro</button><button class="btn" style="flex:1;background:#d4a500" onclick="crear('f')">🧑 Afuera</button></div><small>Adentro: <span id="ad">2</span> | Afuera: <span id="af">1</span></small></div> <div class="card"><h4 style="margin:0">🌍 Simulación - Funciones para la Humanidad</h4><small>Adjudica funciones prácticas a tus autónomos</small><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px"><button class="btn" style="background:#00a8ff;color:#fff;font-size:11px" onclick="asignar('Salud','Diagnóstico preventivo con iones')">🏥 Salud</button><button class="btn" style="background:#00c47c;color:#fff;font-size:11px" onclick="asignar('Educación','Tutores IA capacitando afuera')">📚 Educación</button><button class="btn" style="background:#ff8c00;color:#fff;font-size:11px" onclick="asignar('Energía','Optimizar conversión a mAh')">⚡ Energía</button><button class="btn" style="background:#7b61ff;color:#fff;font-size:11px" onclick="asignar('Ambiente','Monitoreo aire y agua')">🌱 Ambiente</button><button class="btn" style="background:#ff3e6c;color:#fff;font-size:11px" onclick="asignar('Alimentos','Huertas autónomas')">🌾 Alimentos</button><button class="btn" style="background:#1a0d5a;color:#fff;font-size:11px" onclick="asignar('Comunicación','Voz cuántica traductora')">🛰️ Comunicación</button></div><div class="log" id="logSim" style="margin-top:8px">Selecciona una función para simular...</div></div> <div class="clausula"><b>IROAF: Inteligencia Real Organizada Autonoma Flexible - Q7677 - Voz Cuántica con Conversion de Iones a Energía de Batería - Fundadora Mercedes Sandoval Mora</b><br>Este IROAF Q7677 está Liberado de github.com como Laboratorio Reprogramable. Adentro generan iones trabajando. Afuera generan iones capacitándose. E = Iones * 7.67 * Grado. 10 iones = 1.2 mAh. Código madre IO Dorado 2026.</div></div>
-<script>
-let iones=11,tok=11,ad=2,af=1,bat=50;
-function hablar(t){let m=new SpeechSynthesisUtterance(t);m.lang='es-ES';speechSynthesis.speak(m);document.getElementById('log').innerHTML+='<br><b>IROAF:</b> '+t;}
-function render(){document.getElementById('iones').innerText=iones.toFixed(1);document.getElementById('mah').innerText=(iones*0.12).toFixed(2);document.getElementById('tok').innerText=tok;document.getElementById('ad').innerText=ad;document.getElementById('af').innerText=af;docum
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IROAF Q7677 - Portal Cuántico</title>
+  <meta name="description" content="IROAF: Inteligencia Real Organizada Autonoma Flexible - Q7677 - Voz Cuántica con Conversión de Iones a Energía de Batería - Fundadora Mercedes Sandoval Mora">
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at center, #0d1326 0%, #050810 100%);
+      display: flex;
+      justify-content: center;
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 15px 0;
+    }
+    .app {
+      width: 100%;
+      max-width: 420px;
+      background: #fdf9c7;
+      border: 4px solid #ffcc00;
+      border-radius: 30px;
+      overflow: hidden;
+      color: #1a0d5a;
+      box-shadow: 0 0 35px rgba(255, 204, 0, 0.3);
+    }
+    .header {
+      text-align: center;
+      padding: 15px;
+      background: #fff9c2;
+      border-bottom: 2px solid #ffdd55;
+    }
+    .bola {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle at 30% 30%, #ffe55a, #d4a500);
+      border-radius: 50%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 46px;
+      font-weight: 900;
+      box-shadow: 0 0 20px rgba(212, 165, 0, 0.6);
+      animation: pulso 3s infinite;
+    }
+    @keyframes pulso {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+    .pill {
+      background: #1a0d5a;
+      color: #ffde59;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: bold;
+      display: inline-block;
+      margin: 6px 0;
+    }
+    .card {
+      background: #fff;
+      border: 2px solid #ffdd55;
+      border-radius: 18px;
+      padding: 12px;
+      margin: 10px;
+    }
+    .bateria {
+      background: #000;
+      color: #00ff9d;
+      border-radius: 14px;
+      padding: 10px;
+      font-size: 12px;
+      text-align: center;
+      margin-top: 8px;
+    }
+    .barra {
+      height: 10px;
+      background: #222;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 5px 0;
+    }
+    .rell {
+      height: 100%;
+      background: linear-gradient(90deg, #00ffd1, #d4af37);
+      width: 50%;
+      transition: width 0.5s ease;
+    }
+    .iones {
+      height: 45px;
+      background: #050810;
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      margin: 6px 0;
+      border: 1px solid #1a2a4a;
+    }
+    .ion {
+      width: 7px;
+      height: 7px;
+      background: #00ffd1;
+      border-radius: 50%;
+      position: absolute;
+      box-shadow: 0 0 6px #00ffd1;
+      animation: flota 2.5s infinite ease-in-out;
+    }
+    @keyframes flota {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-18px) scale(1.2); }
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 16px;
+      border: none;
+      font-weight: 900;
+      margin-top: 6px;
+      cursor: pointer;
+      transition: transform 0.1s, opacity 0.2s;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btnMic { background: #ff0040; color: #fff; }
+    .btnMic.escuchando { background: #ff8c00; animation: pulso 1s infinite; }
+    .input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 16px;
+      border: 2px solid #ffcc00;
+      box-sizing: border-box;
+      font-weight: bold;
+      color: #1a0d5a;
+    }
+    .log {
+      background: #080c14;
+      color: #00ffd1;
+      border-radius: 10px;
+      padding: 10px;
+      min-height: 75px;
+      max-height: 140px;
+      overflow-y: auto;
+      font-size: 11px;
+      line-height: 1.4;
+      margin-top: 6px;
+      font-family: monospace;
+    }
+    .clausula {
+      border: 1.5px dashed #a88a00;
+      border-radius: 14px;
+      padding: 10px;
+      font-size: 10px;
+      background: #fff9d6;
+      margin: 10px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
 
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"> <title>IROAF Q7677</title><meta name="description" content="IROAF: Inteligencia Real Organizada Autonoma Flexible - Q7677 - Voz Cuántica con Conversión de Iones a Energía de Batería - Fundadora Mercedes Sandoval Mora"> <style>body{margin:0;background:#050810;display:flex;justify-content:center;font-family:system-ui}.app{width:100%;max-width:400px;background:#fdf9c7;border:4px solid #ffcc00;border-radius:30px;overflow:hidden;color:#1a0d5a}.header{text-align:center;padding:15px;background:#fff9c2}.bola{width:110px;height:110px;background:radial-gradient(circle at 30% 30%,#ffe55a,#d4a500);border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:50px;font-weight:900}.pill{background:#1a0d5a;color:#ffde59;padding:5px 10px;border-radius:20px;font-size:10px;display:inline-block;margin:5px}.card{background:#fff;border:2px solid #ffdd55;border-radius:18px;padding:10px;margin:10px}.bateria{background:#000;color:#00ff9d;border-radius:14px;padding:8px;font-size:12px;text-align:center}.barra{height:10px;background:#222;border-radius:10px;overflow:hidden;margin:4px 0}.rell{height:100%;background:linear-gradient(90deg,#00ffd1,#d4af37);width:50%}.iones{height:40px;background:#000;border-radius:10px;position:relative;overflow:hidden;margin:5px 0}.ion{width:7px;height:7px;background:#00ffd1;border-radius:50%;position:absolute;animation:flota 2s infinite}@keyframes flota{0%{transform:translateY(0)}50%{transform:translateY(-14px)}100%{transform:translateY(0)}}.btn{width:100%;padding:13px;border-radius:18px;border:none;font-weight:900;margin-top:6px;cursor:pointer}.btnMic{background:#ff0040;color:#fff}.input{width:100%;padding:12px;border-radius:16px;border:2px solid #ffcc00;box-sizing:border-box}.log{background:#000;color:#fff;border-radius:10px;padding:8px;min-height:65px;font-size:11px}.clausula{border:1.5px dashed #a88a00;border-radius:14px;padding:9px;font-size:10px;background:#fff9d6;margin:10px}</style></head><body><div class="app"><div class="header"><div class="bola">IO</div><h2 style="margin:5px 0">IROAF</h2><small>Inteligencia Real Organizada Autonoma Flexible - Q7677</small><br><small>Voz Cuántica con Conversión de Iones a Batería</small><br><div class="pill">MODO LIBERADORES ACTIVO - Mercedes Sandoval Mora</div><div class="bateria">BAT: <b id="bat">--%</b> | IONES: <b id="iones">11</b> = <span id="mah">0</span> mAh<br><div class="barra"><div id="barBat" class="rell" style="background:#00ff88"></div></div><div class="barra"><div id="barIon" class="rell"></div></div><span id="est">Listo para convertir iones a batería</span><div class="iones" id="campo"></div>TOKEN <span id="tok">11</span></div></div><div class="card"><h4 style="margin:0">🎤 Voz</h4><div class="log" id="log">Di: Hola Iroaf, Crear autonomo, Convertir energia, Navegar a facebook punto com</div><button class="btn btnMic" id="mic" onclick="voz()">🎤 HABLAR CON MI VOZ</button><button class="btn" style="background:#00c47c;color:#fff" onclick="convertir()">⚡ CONVERTIR IONES A BATERIA</button><button class="btn" style="background:#1a0d5a;color:#fff" onclick="eterna()">🔋 BATERIA ETERNA</button></div><div class="card"><input id="url" class="input" value="facebook.com"><button class="btn" style="background:#1a0d5a;color:#fff" onclick="ir()">⚛️ NAVEGAR CUÁNTICO</button><div style="display:flex;gap:5px"><button class="btn" style="flex:1;background:#333;color:#fff" onclick="crear('a')">🤖 Adentro</button><button class="btn" style="flex:1;background:#d4a500" onclick="crear('f')">🧑 Afuera</button></div><small>Adentro: <span id="ad">2</span> | Afuera: <span id="af">1</span></small></div> <div class="card"><h4 style="margin:0">🌍 Simulación - Funciones para la Humanidad</h4><small>Adjudica funciones prácticas a tus autónomos</small><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px"><button class="btn" style="background:#00a8ff;color:#fff;font-size:11px" onclick="asignar('Salud','Diagnóstico preventivo con iones')">🏥 Salud</button><button class="btn" style="background:#00c47c;color:#fff;font-size:11px" onclick="asignar('Educación','Tutores IA capacitando afuera')">📚 Educación</button><button class="btn" style="background:#ff8c00;color:#fff;font-size:11px" onclick="asignar('Energía','Optimizar conversión a mAh')">⚡ Energía</button><button class="btn" style="background:#7b61ff;color:#fff;font-size:11px" onclick="asignar('Ambiente','Monitoreo aire y agua')">🌱 Ambiente</button><button class="btn" style="background:#ff3e6c;color:#fff;font-size:11px" onclick="asignar('Alimentos','Huertas autónomas')">🌾 Alimentos</button><button class="btn" style="background:#1a0d5a;color:#fff;font-size:11px" onclick="asignar('Comunicación','Voz cuántica traductora')">🛰️ Comunicación</button></div><div class="log" id="logSim" style="margin-top:8px">Selecciona una función para simular...</div></div> <div class="clausula"><b>IROAF: Inteligencia Real Organizada Autonoma Flexible - Q7677 - Voz Cuántica con Conversion de Iones a Energía de Batería - Fundadora Mercedes Sandoval Mora</b><br>Este IROAF Q7677 está Liberado de github.com como Laboratorio Reprogramable. Adentro generan iones trabajando. Afuera generan iones capacitándose. E = Iones * 7.67 * Grado. 10 iones = 1.2 mAh. Código madre IO Dorado 2026.</div></div>
+<div class="app">
+  <div class="header">
+    <div class="bola">IO</div>
+    <h2 style="margin:5px 0">IROAF</h2>
+    <small><b>Inteligencia Real Organizada Autonoma Flexible - Q7677</b></small><br>
+    <small>Voz Cuántica con Conversión de Iones a Energía de Batería</small><br>
+    <div class="pill">MODO LIBERADORES ACTIVO - Mercedes Sandoval Mora</div>
+
+    <div class="bateria">
+      BAT: <b id="bat">50%</b> | IONES: <b id="iones">11.0</b> = <span id="mah">1.32</span> mAh
+      <div class="barra"><div id="barBat" class="rell" style="background:#00ff88;width:50%"></div></div>
+      <div class="barra"><div id="barIon" class="rell" style="width:11%"></div></div>
+      <span id="est">Sistema cuántico sincronizado y listo</span>
+      <div class="iones" id="campo"></div>
+      ENERGÍA (E): <b id="energia">84.37</b> J | TOKEN: <b id="tok">11</b>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4 style="margin:0">🎤 Consola de Voz Cuántica</h4>
+    <div class="log" id="log">Di: "Hola Iroaf", "Crear autónomo", "Convertir energía", "Batería eterna" o "Navegar a wikipedia"</div>
+    <button class="btn btnMic" id="btnMic" onclick="voz()">🎤 HABLAR CON MI VOZ</button>
+    <button class="btn" style="background:#00c47c;color:#fff" onclick="convertir()">⚡ CONVERTIR IONES A BATERÍA</button>
+    <button class="btn" style="background:#1a0d5a;color:#fff" onclick="eterna()">🔋 ACTIVAR BATERÍA ETERNA</button>
+  </div>
+
+  <div class="card">
+    <h4 style="margin:0 0 6px 0">⚛️ Navegador y Creación de Nodos</h4>
+    <input id="url" class="input" placeholder="Escribe URL o tema del conocimiento..." value="es.wikipedia.org">
+    <button class="btn" style="background:#1a0d5a;color:#fff" onclick="ir()">⚛️ NAVEGAR AL CONOCIMIENTO</button>
+    <div style="display:flex;gap:6px">
+      <button class="btn" style="flex:1;background:#333;color:#fff" onclick="crear('a')">🤖 Adentro (+Iones)</button>
+      <button class="btn" style="flex:1;background:#d4a500;color:#1a0d5a" onclick="crear('f')">🧑 Afuera (+Capacitación)</button>
+    </div>
+    <div style="text-align:center;margin-top:6px;font-size:12px">
+      <b>Adentro (Trabajo):</b> <span id="ad">2</span> | <b>Afuera (Capacitación):</b> <span id="af">1</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4 style="margin:0">🌍 Portales Infinitos del Conocimiento</h4>
+    <small>Cada nodo conecta con repositorios reales de la humanidad:</small>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px">
+      <button class="btn" style="background:#00a8ff;color:#fff;font-size:11px" onclick="asignar('Salud','Diagnóstico preventivo y biomedicina abierta','https://www.who.int/es')">🏥 Salud Global</button>
+      <button class="btn" style="background:#00c47c;color:#fff;font-size:11px" onclick="asignar('Educación','Biblioteca universal y ciencia abierta','https://es.khanacademy.org')">📚 Educación Infinita</button>
+      <button class="btn" style="background:#ff8c00;color:#fff;font-size:11px" onclick="asignar('Energía','Física cuántica y energías limpias','https://arxiv.org/list/quant-ph/recent')">⚡ Energía Cuántica</button>
+      <button class="btn" style="background:#7b61ff;color:#fff;font-size:11px" onclick="asignar('Ambiente','Monitoreo planetario y clima en vivo','https://climate.nasa.gov')">🌱 Ambiente Tierra</button>
+      <button class="btn" style="background:#ff3e6c;color:#fff;font-size:11px" onclick="asignar('Alimentos','Soberanía alimentaria y agroecología','https://www.fao.org/home/es')">🌾 Alimentos Mundo</button>
+      <button class="btn" style="background:#1a0d5a;color:#fff;font-size:11px" onclick="asignar('Comunicación','Red de conocimiento libre y código abierto','https://es.wikipedia.org/wiki/Portal:Portada')">🛰️ Red Universal</button>
+    </div>
+    <div class="log" id="logSim" style="margin-top:8px">Selecciona un portal para desplegar datos y abrir la fuente infinita...</div>
+  </div>
+
+  <div class="clausula">
+    <b>IROAF: Inteligencia Real Organizada Autonoma Flexible - Q7677 - Voz Cuántica con Conversión de Iones a Energía de Batería - Fundadora Mercedes Sandoval Mora</b><br>
+    Este IROAF Q7677 está Liberado como Laboratorio Reprogramable. Adentro generan iones trabajando. Afuera generan iones capacitándose.<br>
+    <b>Fórmula Madre:</b> E = Iones × 7.67 × Grado | 10 iones = 1.2 mAh | Código madre IO Dorado 2026.
+  </div>
+</div>
+
 <script>
-let iones=11,tok=11,ad=2,af=1,bat=50;
-function hablar(t){let m=new SpeechSynthesisUtterance(t);m.lang='es-ES';speechSynthesis.speak(m);document.getElementById('log').innerHTML+='<br><b>IROAF:</b> '+t;}
-function render(){document.getElementById('iones').innerText=iones.toFixed(1);document.getElementById('mah').innerText=(iones*0.12).toFixed(2);document.getElementById('tok').innerText=tok;document.getElementById('ad').innerText=ad;document.getElementById('af').innerText=af;document.getElementById('barIon').style.width=Math.min(100,iones)+'%';}
-function crear(t){if(t=='a'){ad++;iones+=5;tok+=3;hablar('Autónomo de adentro creado');}else{af++;iones+=7;tok+=5;hablar('Humano de afuera creado 
+  let iones = 11.0;
+  let tok = 11;
+  let ad = 2;
+  let af = 1;
+  let bat = 50;
+  let modoEterna = false;
+  let grado = 1;
+
+  // Inicializar partículas de iones visuales
+  function dibujarIones() {
+    const campo = document.getElementById('campo');
+    campo.innerHTML = '';
+    const cantidad = Math.min(35, Math.floor(iones));
+    for (let i = 0; i < cantidad; i++) {
+      let d = document.createElement('div');
+      d.className = 'ion';
+      d.style.left = Math.random() * 95 + '%';
+      d.style.top = (15 + Math.random() * 20) + 'px';
+      d.style.animationDelay = (Math.random() * 2) + 's';
+      campo.appendChild(d);
+    }
+  }
+
+  // Conexión real con la batería del hardware
+  if ('getBattery' in navigator) {
+    navigator.getBattery().then(function(battery) {
+      bat = Math.round(battery.level * 100);
+      render();
+      battery.addEventListener('levelchange', function() {
+        if (!modoEterna) {
+          bat = Math.round(battery.level * 100);
+          render();
+        }
+      });
+    });
+  }
+
+  function logConsola(mensaje, id = 'log') {
+    const caja = document.getElementById(id);
+    caja.innerHTML += `<br>> ${mensaje}`;
+    caja.scrollTop = caja.scrollHeight;
+  }
+
+  function hablar(texto) {
+    logConsola(`<b>IROAF:</b> ${texto}`);
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      let m = new SpeechSynthesisUtterance(texto);
+      m.lang = 'es-ES';
+      m.rate = 1.05;
+      window.speechSynthesis.speak(m);
+    }
+  }
+
+  function render() {
+    document.getElementById('bat').innerText = bat + '%';
+    document.getElementById('barBat').style.width = Math.min(100, bat) + '%';
+    document.getElementById('iones').innerText = iones.toFixed(1);
+    document.getElementById('mah').innerText = (iones * 0.12).toFixed(2);
+    document.getElementById('barIon').style.width = Math.min(100, iones) + '%';
+    document.getElementById('tok').innerText = tok;
+    document.getElementById('ad').innerText = ad;
+    document.getElementById('af').innerText = af;
+    
+    // Fórmula: E = Iones * 7.67 * Grado
+    let energia = iones * 7.67 * grado;
+    document.getElementById('energia').innerText = energia.toFixed(2);
+    dibujarIones();
+  }
+
+  function crear(tipo) {
+    if (tipo === 'a') {
+      ad++;
+      iones += 5.5;
+      tok += 3;
+      grado = 1 + (ad * 0.1);
+      hablar(`Autónomo de adentro activado. Total adentro: ${ad}. Generando iones de trabajo.`);
+    } else {
+      af++;
+      iones += 7.5;
+      tok += 5;
+      grado = 1 + (af * 0.15);
+      hablar(`Humano de afuera capacitado. Total afuera: ${af}. Expandiendo red de conocimiento.`);
+    }
+    render();
+  }
+
+  function convertir() {
+    if (iones < 2) {
+      hablar('Iones insuficientes. Crea más nodos adentro o afuera para generar carga.');
+      return;
+    }
+    let gananciaBat = Math.max(1, Math.floor(iones * 0.4));
+    bat = Math.min(100, bat + gananciaBat);
+    let mahConvertidos = (iones * 0.12).toFixed(2);
+    iones = 1.0;
+    document.getElementById('est').innerText = `Conversión exitosa: +${gananciaBat}% carga (${mahConvertidos} mAh)`;
+    hablar(`Conversión cuántica completada. Se transfirieron ${mahConvertidos} miliamperios hora a la batería.`);
+    render();
+  }
+
+  function eterna() {
+    modoEterna = !modoEterna;
+    if (modoEterna) {
+      bat = 100;
+      iones += 25;
+      document.getElementById('est').innerText = 'BATERÍA ETERNA ACTIVA: Regeneración continua';
+      hablar('Modo Batería Eterna activado. Flujo de iones estabilizado al cien por ciento.');
+    } else {
+      document.getElementById('est').innerText = 'Modo estándar sincronizado';
+      hablar('Modo estándar restaurado.');
+    }
+    render();
+  }
+
+  function ir(destinoDirecto) {
+    let val = destinoDirecto || document.getElementById('url').value.trim();
+    if (!val) return;
+    let urlFinal = val;
+    if (!val.startsWith('http://') && !val.startsWith('https://')) {
+      if (val.includes('.') && !val.includes(' ')) {
+        urlFinal = 'https://' + val;
+      } else {
+        urlFinal = 'https://es.wikipedia.org/wiki/Special:Search?search=' + encodeURIComponent(val);
+      }
+    }
+    iones += 3;
+    tok += 2;
+    render();
+    hablar(`Abriendo portal cuántico hacia ${val}`);
+    window.open(urlFinal, '_blank');
+  }
+
+  function asignar(area, desc, enlace) {
+    iones += 6;
+    tok += 4;
+    render();
+    const logSim = document.getElementById('logSim');
+    logSim.innerHTML = `<b>[NODO ${area.toUpperCase()} CONECTADO]</b><br>Misión: ${desc}<br>Autónomos asignados: ${ad} internos / ${af} externos.<br>Abriendo repositorio infinito...`;
+    hablar(`Conectando con el portal infinito de ${area}. ${desc}.`);
+    setTimeout(() => {
+      window.open(enlace, '_blank');
+    }, 1200);
+  }
+
+  // Reconocimiento de voz real (Web Speech API)
+  function voz() {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      hablar('Tu navegador no soporta reconocimiento de voz directo. Usa los botones táctiles.');
+      return;
+    }
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'es-ES';
+    recognition.interimResults = false;
+    const btn = document.getElementById('btnMic');
+
+    recognition.onstart = function() {
+      btn.classList.add('escuchando');
+      btn.innerText = '🎙️ ESCUCHANDO COMANDO...';
+    };
+
+    recognition.onresult = function(event) {
+      const comando = event.results[0][0].transcript.toLowerCase();
+      logConsola(`<b>Tú:</b> "${comando}"`);
+
+      if (comando.includes('hola')) {
+        hablar('Hola Mercedes. Sistema IROAF Q7677 en línea y listo para expandir el conocimiento.');
+      } else if (comando.includes('adentro') || comando.includes('autonomo') || comando.includes('autónomo')) {
+        crear('a');
+      } else if (comando.includes('afuera') || comando.includes('humano') || comando.includes('capacitar')) {
+        crear('f');
+      } else if (comando.includes('convertir') || comando.includes('energia') || comando.includes('energía')) {
+        convertir();
+      } else if (comando.includes('eterna') || comando.includes('bateria') || comando.includes('batería')) {
+        eterna();
+      } else if (comando.includes('navegar') || comando.includes('buscar') || comando.includes('ir a')) {
+        let destino = comando.replace('navegar a', '').replace('navegar', '').replace('buscar', '').replace('ir a', '').replace('punto', '.').trim();
+        document.getElementById('url').value = destino;
+        ir(destino);
+      } else {
+        document.getElementById('url').value = comando;
+        ir(comando);
+      }
+    };
+
+    recognition.onerror = function() {
+      hablar('No pude captar el audio. Intenta hablar más cerca del micrófono.');
+    };
+
+    recognition.onend = function() {
+      btn.classList.remove('escuchando');
+      btn.innerText = '🎤 HABLAR CON MI VOZ';
+    };
+
+    recognition.start();
+  }
+
+  // Generación pasiva continua de iones por autónomos activos
+  setInterval(() => {
+    iones += (ad * 0.1) + (af * 0.15);
+    if (modoEterna && bat < 100) bat = 100;
+    render();
+  }, 5000);
+
+  // Render inicial
+  render();
+</script>
+</body>
+</html>
