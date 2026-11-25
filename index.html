@@ -5,4 +5,4 @@
 let iones=11,tok=11,ad=2,af=1,bat=50;
 function hablar(t){let m=new SpeechSynthesisUtterance(t);m.lang='es-ES';speechSynthesis.speak(m);document.getElementById('log').innerHTML+='<br><b>IROAF:</b> '+t;}
 function render(){document.getElementById('iones').innerText=iones.toFixed(1);document.getElementById('mah').innerText=(iones*0.12).toFixed(2);document.getElementById('tok').innerText=tok;document.getElementById('ad').innerText=ad;document.getElementById('af').innerText=af;document.getElementById('barIon').style.width=Math.min(100,iones)+'%';}
-function crear(t){if(t=='a'){ad++;iones+=5;tok+=3;hablar('Autónomo de adentro creado');}else{af++;iones+=7;tok+=5;hablar('Humano de afuera creado
+function crear(t){if(t=='a'){ad++;iones+=5;tok+=3;hablar('Autónomo de adentro creado');}else{af++;iones+=7;tok+=5;hablar('Humano de afuera creado 
